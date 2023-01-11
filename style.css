@@ -6,14 +6,21 @@
     box-sizing: border-box;
 }
 
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
 body {
     background: var(--bg-color);
+    overflow: scroll;
 }
 
 :root {
     --bg-color: #2B2B2B;
     --white-color: #fff;
     --btn-bg: #A259FF;
+    --sec-bg: #3B3B3B;
 }
 
 header {
@@ -22,6 +29,10 @@ header {
     padding: 0px 50px;
     align-items: center;
     justify-content: space-between;
+}
+
+.header__logo {
+    cursor: pointer;
 }
 
 .nav {
@@ -39,6 +50,12 @@ header {
     font-weight: 600;
     font-size: 16px;
     text-align: center;
+    transition: 1s;
+}
+
+.nav a:hover {
+    transform: translateY(10px);
+    cursor: pointer;
 }
 
 .nav_btn {
@@ -58,9 +75,865 @@ header {
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.5s;
+    transition: 1s;
 }
 
 .nav_btn:hover {
     background-color: unset;
+    transform: translateY(10px);
 }
 
+.discover {
+    display: flex;
+    justify-content: center;
+    padding: 80px 0px;
+}
+
+.left__side {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.left__side_title {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    width: 500px;
+    height: 222px;
+    font-size: 67px;
+    color: var(--white-color);
+    align-items: center;
+}
+
+.left__side_text {
+    width: 510px;
+    height: 105px;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 160%;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+.left__side button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 224px;
+    height: 60px;
+    font-family: 'Work Sans';
+    font-style: normal;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid var(--btn-bg);
+    background-color: var(--btn-bg);
+    color: var(--white-color);
+    transition: background-color 0.5s;
+}
+
+.left__side button:hover {
+    background-color: unset;
+}
+
+.left__side_info {
+    display: flex;
+    gap: 30px;
+    color: var(--white-color);
+}
+
+.left__side_item_title {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.left__side_item_desc {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23.99px;
+}
+
+.right__side {
+    width: 510px;
+    height: 510px;
+    background-color: var(--sec-bg);
+    border-radius: 20px;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.right__side:hover {
+    transform: translateY(10px);
+}
+
+.right__side_title {
+    height: 30px;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    padding: 22px 20px;
+    color: var(--white-color);
+}
+
+.right__side_desc {
+    display: flex;
+    gap: 12px;
+    padding: 15px 20px;
+    color: var(--white-color);
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.trending {
+    padding-top: 200px;
+    margin: 0 auto;
+    width: 1050px;
+}
+
+.trending__title {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 38px;
+    color: var(--white-color);
+}
+
+.trending__text {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    text-transform: capitalize;
+    color: var(--white-color);
+}
+
+.collection {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+}
+
+.collection__item_img {
+    display: flex;
+    flex-direction: column;
+    transition: 1s;
+}
+
+.collection__item_img:hover {
+    transform: translateY(10px);
+    cursor: pointer;
+}
+
+.collection__under_item_img {
+    display: flex;
+    padding-top: 15px;
+    justify-content: space-between;
+}
+
+.collection__item_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 15px;
+}
+
+.collection__item_title {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    text-transform: capitalize;
+    color: var(--white-color);
+}
+
+.collection__item_desc {
+    display: flex;
+    gap: 12px;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--white-color);
+}
+
+.creators {
+    padding-top: 200px;
+    margin: 0 auto;
+    width: 1050px;
+}
+
+.creators__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.creators__left_side {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.creators__title {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 38px;
+    color: var(--white-color);
+    text-transform: capitalize;
+}
+
+.creators__text {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: var(--white-color);
+}
+
+.creators__btn button {
+    display: flex;
+    gap: 12px;
+    width: 247px;
+    height: 60px;
+    background-color: var(--btn-bg);
+    border: 1px solid var(--btn-bg);
+    border-radius: 20px;
+    transition: background-color 0.5s,background-image 0.5s;
+    color: var(--white-color);
+    justify-content: center;
+    align-items: center;
+    background-image: url(/components/RocketLaunch.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: 22%;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.creators__btn button:hover {
+    background-color: unset;
+    background-image: url(/components/RocketLaunchViolet.svg);
+    background-position: center;
+    background-position: 22%;
+}
+
+.creators__img_list {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+}
+
+.creators__column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.creators__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 240px;
+    height: 242px;
+    background-color: var(--sec-bg);
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.creators__item:hover {
+    transform: translateY(10px);
+}
+
+.creators__img {
+    padding-top: 20px;
+}
+
+.creators__item_title {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    padding-top: 20px;
+    color: var(--white-color);
+}
+
+.creators__price {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding-top: 5px;
+}
+
+.first__price {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #858584;
+}
+
+.second__price {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.categories {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+.categories__title {
+    display: flex;
+    width: 1050px;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 38px;
+    color: var(--white-color);
+}
+
+.categories__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 80px;
+}
+
+.categories__row {
+    display: flex;
+    gap: 30px;
+}
+
+.categories__item {
+    width: 240px;
+    height: 316px;
+    border-radius: 20px;
+    background-color: var(--sec-bg);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.categories__item:hover {
+    transform: translateY(10px);
+}
+
+.categories__text {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--white-color);
+    padding: 20px 30px;
+}
+
+.categories__img {
+    position: relative;
+    width: 240px;
+    height: 240px;
+}
+
+
+.small__image {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+.big__image {
+    filter: blur(7.5px);
+}
+
+.discover__nft {
+    margin: 0 auto;
+    width: 1050px;
+    padding-top: 80px;
+}
+
+.discover__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.discover__left_side {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.discover__title {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 38px;
+    color: var(--white-color);
+}
+
+.discover__text {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--white-color);
+}
+
+.discover__nft button {
+    width: 187px;
+    height: 60px;
+    background: none;
+    background-color: var(--btn-bg);
+    border: 1px solid var(--btn-bg);
+    background-image: url(/components/discover/white_eye.svg);
+    background-position: center;
+    background-position: 29%;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    transition: background-color 1s, background-image 1s;
+    color: var(--white-color);
+}
+
+.discover__nft button:hover {
+    background-color: unset;
+    background-image: url(/components/discover/Eye.svg);
+}
+
+.discover__nft_list {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+}
+
+.discover__nft_content {
+    padding: 20px 30px;
+}
+
+.discover__nft_title {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--white-color);
+}
+
+.discover__nft_text {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    color: var(--white-color);
+    font-family: 'Space Mono';
+    padding-top: 5px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.discover__nft_footer { 
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+}
+
+.discover__nft_price {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--white-color);
+    gap: 8px;
+}
+
+.nft__dark {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #858584;
+}
+
+.discover__nft_bid {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--white-color);
+    gap: 8px;
+}
+
+.discover__nft_item {
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    height: 469px;
+    background-color: var(--sec-bg);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.discover__nft_item:hover {
+    transform: translateY(10px);
+}
+
+.mashrooms {
+    width: 100%;
+    height: 1000px;
+    padding-top: 60px;
+}
+
+.mashrooms__info {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    background-image: url(/components/mashrooms/539d8bdf-b001-4a2d-8af4-afc0e0ec524f.jpg);
+    background-repeat: no-repeat;
+    background-size: cover ;
+    display: flex;
+    padding-bottom: 60px;
+    padding-right: 115px;
+    padding-left: 115px;
+}
+
+.mashrooms__left_side {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.mashrooms__title {
+    display: flex;
+    color: var(--white-color);
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    width: 151px;
+    gap: 12px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--sec-bg);
+    border-radius: 20px;
+}
+
+.mashrooms__text {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 51px;
+    color: var(--white-color);
+}
+
+.mashrooms__btn button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 198px;
+    height: 60px;
+    gap: 12px;
+    background: none;
+    background-color: var(--white-color);
+    border: 1px solid var(--white-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 1s;
+}
+
+.mashrooms__btn button:hover {
+    background-color: unset;
+}
+
+.mashrooms__btn p{
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--sec-bg);
+}
+
+
+
+.mashrooms__right_side {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.timer__block {
+    width: 295px;
+    height: 144px;
+    background-color: rgba(59, 59, 59, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    transition: 1s;
+}
+
+.timer__content {
+    padding: 30px 30px;
+}
+
+.timer__title {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--white-color);
+}
+
+.timer__numb {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    color: var(--white-color);
+}
+
+.timer__words {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--white-color);
+}
+
+.timer__block:hover {
+    transform: scale(1.5)
+}
+
+.how {
+    padding-top: 80px;
+    margin: 0 auto;
+    width: 1050px;
+}
+
+.how__title {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 38px;
+    color: var(--white-color);
+}
+
+.how__text {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--white-color);
+}
+
+.how__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.how__content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 48px;
+}
+
+.how__content_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 330px;
+    height: 400px;
+    background-color: var(--sec-bg);
+    border-radius: 20px;
+}
+
+.how__content_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.how__content_title {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--white-color);
+}
+
+.how__content_text {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    width: 270px;
+    color: var(--white-color);
+    text-align: center;
+}
+
+.join {
+    width: 1050px;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+.join__box {
+    display: flex;
+    background-color: var(--sec-bg);
+    gap: 80px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+}
+
+.join__right_side {
+    display: flex;
+    flex-direction: column;
+}
+
+.join__right_side_intro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.join__right_side_title {
+    font-family: 'Work Sans';
+    width: 425px;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 38px;
+    color: var(--white-color);
+}
+
+.join__right_side_text {
+    font-family: 'Work Sans';
+    text-transform: capitalize;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--white-color);
+}
+
+.join__right_side_inp {
+    background-color: #fff;
+    display: flex;
+    margin-top: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    height: 60px;
+    transition: 1s;
+}
+
+.join__right_side_inp input {
+    width: 250px;
+    height: 100%;
+    border-radius: 20px;
+    border: none;
+}
+
+.join__right_side_inp input::placeholder {
+    padding: 19px 20px;
+}
+
+.join__right_side_inp button {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: var(--btn-bg);
+    border: none;
+    color: var(--white-color);
+}
+
+.join__right_side_inp:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    margin-top: 80px;
+    background-color: var(--sec-bg);
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    width: 1050px;
+    margin: 0 auto;
+}
+
+.footer__inner {
+    
+}
+
+.footer__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__title {
+    padding-top: 40px;
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--white-color);
+}
+
+
+.footer__text {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #CCCCCC;
+    padding-top: 30px;
+}
+
+.footer__soc {
+    color: #CCCCCC;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 20px;
+}
+
+.footer__soc_img {
+    display: flex;
+    gap: 10px;
+}
